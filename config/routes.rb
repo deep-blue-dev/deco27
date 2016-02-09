@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'pages#home'
   get 'admin/home', as: :admin
 
@@ -16,6 +17,12 @@ Rails.application.routes.draw do
 
   post 'quote', to: 'quotes#create', as: 'quote_request'
   post 'contact', to: 'contacts#create', as: 'contact_request'
+=======
+
+  resources :products
+  resources :categories
+  root 'pages#index'
+>>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

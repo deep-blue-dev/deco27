@@ -1,3 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <%= render partial: "product", locals: {product: @product} %>
+=======
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @product.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+>>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d

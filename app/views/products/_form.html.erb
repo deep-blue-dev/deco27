@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_for([@product.category, @product]) do |f| %>
+=======
+<%= form_for(@product) do |f| %>
+>>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -12,6 +16,7 @@
   <% end %>
 
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -30,6 +35,22 @@
   <div class="field">
     <%= f.label :promo %><br>
     <%= f.check_box :promo %>
+=======
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+>>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
   </div>
   <div class="actions">
     <%= f.submit %>
