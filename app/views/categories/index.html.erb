@@ -1,0 +1,68 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="row">
+  <div class="col-sm-12 elCarousel">
+    <div id="carousel-example-generic" class="carousel slide slides" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% if @products.present? %>
+        <% @products.each_with_index.select{|product, index| product.promo?}.zip(0..@products.length).each do |product, index| %>
+          <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
+            <div class="item <%= 'active' if index == 0 %>">
+              <%= image_tag(product[0].image_1, class: "center-block") %>
+              <div class="carousel-caption">
+                  <h1>
+                    <%= link_to product[0].name.titleize, category_product_path(product[0].category_id, product[0].id) %>
+                  </h1>
+              </div>
+            </div>
+        <% end %>
+        <% end %>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+ </div>
+<div class="text-center">
+  <h1 class="titles">Categories</h1>
+  <% if @categories.present? %>
+  <% @categories.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |category| %>
+        <div class="col-sm-12 col-md-4">
+          <div class="category-wrapper">
+            <%=link_to( image_tag( category.image, size: "200x200", class: "img-responsive img-margin" ),
+                      category_products_path(category)) if category.image.present? %>
+            <h4><%= link_to category.name, category_products_path(category) %></h4>
+            <% if admin_signed_in? %>
+              <%= link_to 'Show', category, class: "btn btn-primary" %>&nbsp;
+              <%= link_to 'Edit', edit_category_path(category), class: "btn btn-basecamp" %>&nbsp;
+              <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <% end %>
+
+  <% if admin_signed_in? %>
+  <div class="pad-btm">
+    <%= link_to 'New Category', new_category_path, class: "btn btn-basecamp" %>
+  </div>
+  <% end %>
+</div>
