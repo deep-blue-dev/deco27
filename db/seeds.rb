@@ -5,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-<<<<<<< HEAD
 
 # Need to have seed with one admin
 # Admin.create email: 'admin@deco27.net', password: '1234567890'
@@ -61,56 +60,12 @@ categories = [
   },
   {
     name:"Stairs",
-=======
-categories = [
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
-    image:""
-  },
-  {
-    name:"",
-    description:"",
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
     image:""
   }
 ]
 
-<<<<<<< HEAD
 category = Category.create(categories)
 
-=======
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
 products = [
   {
     name:"",
@@ -118,7 +73,7 @@ products = [
     description:"",
     image: "",
     logo:"",
-    category_id:"",
+    category_id:,
     mod_name:""
   }
 ]

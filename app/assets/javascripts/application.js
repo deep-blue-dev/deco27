@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
+
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
@@ -35,10 +35,10 @@ $(document).on('ready page:load', function() {
     id = $(this).attr('href');
     $(id).modal('toggle');
   });
-=======
+
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
   console.log("Jquery reporting for duty");
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
+ 
 });

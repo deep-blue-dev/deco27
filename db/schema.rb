@@ -11,16 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160209225625) do
-=======
-ActiveRecord::Schema.define(version: 20160209030205) do
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -51,18 +46,11 @@ ActiveRecord::Schema.define(version: 20160209030205) do
     t.string   "picture1"
     t.string   "picture2"
     t.text     "description"
-=======
-  create_table "categories", force: :cascade do |t|
-    t.string   "image"
-    t.text     "description"
-    t.string   "name"
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "products", force: :cascade do |t|
-<<<<<<< HEAD
     t.string   "name"
     t.integer  "price"
     t.string   "image_1"
@@ -71,14 +59,6 @@ ActiveRecord::Schema.define(version: 20160209030205) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "category_id"
-=======
-    t.string   "price"
-    t.string   "image"
-    t.text     "description"
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
->>>>>>> bc281907d4713d81bf745bfd342f155aacfef41d
   end
 
 end
